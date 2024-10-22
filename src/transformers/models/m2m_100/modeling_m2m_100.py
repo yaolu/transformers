@@ -18,6 +18,8 @@ import math
 from typing import List, Optional, Tuple, Union
 
 import torch
+import torch.compiler
+
 from torch import nn
 from torch.nn import CrossEntropyLoss
 
