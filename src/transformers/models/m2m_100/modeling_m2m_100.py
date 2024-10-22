@@ -221,7 +221,6 @@ class M2M100Attention(nn.Module):
     def _shape(self, tensor: torch.Tensor, seq_len: int, bsz: int):
         torch.compiler.cudagraph_mark_step_begin()
         output = tensor.view(bsz, seq_len, self.num_heads, self.head_dim).transpose(1, 2).contiguous()
-        torch.compiler.cudagraph_mark_step_end()
         return output
 
     def forward(
